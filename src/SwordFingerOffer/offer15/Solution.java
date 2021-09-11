@@ -19,7 +19,22 @@ public class Solution {
         return count;
     }
 
+
+    /*
+    *   位操作法
+    * */
+    public static int hammingWeight2(int n) {
+        int count = 0;
+        for(int i =0;i<32;i++){
+            if((n & (1 << i)) != 0){
+                count++;
+            }
+        }
+        return count;
+    }
+
     public static void main(String[] args) {
         System.out.println(hammingWeight(-3));
+        System.out.println(hammingWeight2(-3));
     }
 }
