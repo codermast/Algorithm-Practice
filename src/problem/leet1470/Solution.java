@@ -1,5 +1,5 @@
 package problem.leet1470;
-
+//https://leetcode-cn.com/problems/shuffle-the-array/
 public class Solution {
     public int[] shuffle(int[] nums, int n) {
         int[] ret = new int[nums.length];
