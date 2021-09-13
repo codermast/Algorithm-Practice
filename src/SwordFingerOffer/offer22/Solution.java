@@ -1,6 +1,6 @@
 package SwordFingerOffer.offer22;
 
-
+// https://leetcode-cn.com/problems/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof/
 class ListNode {
      int val;
      ListNode next;
