@@ -1,7 +1,7 @@
 package problem.face0304;
 
 import java.util.Stack;
-
+// https://leetcode-cn.com/problems/implement-queue-using-stacks-lcci/
 public class MyQueue {
 
     // 进栈
