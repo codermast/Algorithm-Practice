@@ -1,7 +1,7 @@
 package SwordFingerOffer.offer21;
 
 import java.util.Stack;
-
+// https://leetcode-cn.com/problems/diao-zheng-shu-zu-shun-xu-shi-qi-shu-wei-yu-ou-shu-qian-mian-lcof/
 public class Solution {
     public int[] exchange(int[] nums) {
         int[] ret = new int[nums.length];
@@ -11,11 +11,11 @@ public class Solution {
         // 偶数栈
         Stack<Integer> even = new Stack<>();
 
-        for(int i = 0;i<nums.length;i++){
-            if(nums[i] % 2 == 0){
-                even.push(nums[i]);
+        for(int i : nums){
+            if(i % 2 == 0){
+                even.push(i);
             }else{
-                odd.push(nums[i]);
+                odd.push(i);
             }
         }
         int i = 0;
