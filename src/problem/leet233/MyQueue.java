@@ -2,6 +2,8 @@ package problem.leet233;
 
 import java.util.Stack;
 
+// https://leetcode-cn.com/problems/implement-queue-using-stacks/
+
 public class MyQueue {
     Stack<Integer> pushStack = new Stack<>();
     Stack<Integer> popStack = new Stack<>();
