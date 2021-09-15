@@ -1,7 +1,7 @@
 package problem.leet20;
 
 import java.util.Stack;
-
+// https://leetcode-cn.com/problems/valid-parentheses/submissions/
 public class Solution {
     public boolean isValid(String s) {
         Stack<Character> stack = new Stack<>();
