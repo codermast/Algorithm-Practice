@@ -21,10 +21,7 @@ public class Solution {
                 }
             }
         }
-        if(stack.empty()){
-            return true;
-        }
-        return false;
+        return stack.empty();
     }
 
     public char reversalChar(char c){
