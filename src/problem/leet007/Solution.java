@@ -2,6 +2,7 @@ package problem.leet007;
 
 import java.util.Stack;
 
+// https://leetcode-cn.com/problems/reverse-integer/
 public class Solution {
     public int reverse(int x) {
         if(x == 0){
