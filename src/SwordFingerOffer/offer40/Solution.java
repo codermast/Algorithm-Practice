@@ -1,7 +1,7 @@
 package SwordFingerOffer.offer40;
 
 import java.util.Arrays;
-
+// https://leetcode-cn.com/problems/zui-xiao-de-kge-shu-lcof/
 public class Solution {
     public int[] getLeastNumbers(int[] arr, int k) {
         for (int i = 0; i < arr.length - 1; i++) {
