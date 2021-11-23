@@ -1,0 +1,4 @@
+## 隐藏提交目录
+.idea
+/.gitignore
+out
