@@ -3,7 +3,6 @@ package problem.leet013;
 public class Solution {
         public int romanToInt(String s) {
             char[] chars = s.toCharArray();
-
             int ret = 0;
             for(int i = 0;i<chars.length;i++){
                 if(i != chars.length -1 && romonCharToInt(chars[i]) < romonCharToInt(chars[i +1])){
