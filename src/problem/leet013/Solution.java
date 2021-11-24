@@ -31,12 +31,4 @@ public class Solution {
                 default:return -1;
             }
         }
-
-        public static void main(String[] args) {
-            SwordFingerOffer.offer13.Solution s = new SwordFingerOffer.offer13.Solution();
-
-            String str = "MCMXCIV";
-
-            System.out.println(s.romanToInt(str));
-        }
     }
