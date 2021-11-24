@@ -1,8 +1,8 @@
 package problem.leet1894;
 
 public class Solution {
-    public static int chalkReplacer(int[] chalk, int k) {
-        // 粉笔数量
+    public int chalkReplacer(int[] chalk, int k) {
+        // 数量
         int num = k;
         while(true){
             for(int i =0;i<chalk.length;i++){
