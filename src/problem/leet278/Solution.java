@@ -14,10 +14,8 @@ public class Solution {
     public int firstBadVersion(int n) {
         int left = 1;
         int right = n;
-
         while(left < right){
             int middle = ((right - left) / 2) + left;
-
             // 中间都是坏的，则肯定在左边
             if(isBadVersion(middle)){
                 right = middle;
