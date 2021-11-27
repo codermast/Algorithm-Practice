@@ -1,4 +1,4 @@
-package problem.leet20;
+package problem.leet020;
 
 import java.util.Stack;
 // https://leetcode-cn.com/problems/valid-parentheses/submissions/
