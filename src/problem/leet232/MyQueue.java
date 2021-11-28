@@ -6,8 +6,8 @@ import java.util.Stack;
 // 双栈实现队列
 class MyQueue {
 
-    Stack<Integer> pushStack;
-    Stack<Integer> popStack;
+    private Stack<Integer> pushStack;
+    private Stack<Integer> popStack;
     public MyQueue() {
         // 压进的栈
         pushStack = new Stack<>();
