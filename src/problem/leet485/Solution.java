@@ -27,7 +27,9 @@ public class Solution {
         }
         return maxlen;
     }
-    /**/
+    /*
+    *   此方法效率不高，因为涉及到把将字符串进行拼接求长度
+    * */
     public static int findMaxConsecutiveOnes2(int[] nums) {
         StringBuilder sb = new StringBuilder();
         int maxlen = 0;
