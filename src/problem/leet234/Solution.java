@@ -23,20 +23,18 @@ public class Solution {
 
     // 回文链表
     public boolean isPalindrome(ListNode head) {
-        // 回文链表
-        public boolean isPalindrome (ListNode head){
-            Stack<Integer> stack = new Stack<>();
+        Stack<Integer> stack = new Stack<>();
 
-            for (ListNode i = head; i != null; i = i.next) {
-                stack.push(i.val);
-            }
-
-            for (ListNode i = head; i != null; i = i.next) {
-                if (i.val != stack.pop()) {
-                    return false;
-                }
-            }
-            return true;
+        for (ListNode i = head; i != null; i = i.next) {
+            stack.push(i.val);
         }
+
+        for (ListNode i = head; i != null; i = i.next) {
+            if (i.val != stack.pop()) {
+                return false;
+            }
+        }
+        return true;
     }
+
 }
