@@ -10,10 +10,6 @@ public class Solution {
         }
 
         int i = n % 4;
-        if(i == 0){
-            return false;
-        }
-
-        return true;
+        return i != 0;
     }
 }
