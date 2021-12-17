@@ -13,6 +13,7 @@ public class Solution {
             return  l2;
         }
 
+
         if(l2 == null){
             return l1;
         }
