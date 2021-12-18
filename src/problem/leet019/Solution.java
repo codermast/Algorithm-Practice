@@ -23,7 +23,6 @@ class Solution {
             second = second.next;
         }
         second.next = second.next.next;
-        ListNode ans = ;
         return dummy.next;
     }
 
