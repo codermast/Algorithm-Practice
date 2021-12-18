@@ -12,20 +12,19 @@ class Solution {
 
     // 遍历一遍的方法
     public static ListNode removeNthFromEnd(ListNode head, int n) {
-
+        ListNode dummy = new ListNode(0, head);
         ListNode first = head;
-        ListNode last = head;
-        for(int i = 1;i < n - 1;i++){
-            last = last.next;
-        }
-
-        // 此时，first和last之间的距离为 n - 1;
-        for(;last.next != null;){
-            last = last.next;
+        ListNode second = dummy;
+        for (int i = 0; i < n; ++i) {
             first = first.next;
         }
-        first.next = first.next.next;
-        return head;
+        while (first != null) {
+            first = first.next;
+            second = second.next;
+        }
+        second.next = second.next.next;
+        ListNode ans = ;
+        return dummy.next;
     }
 
     public static void main(String[] args) {
