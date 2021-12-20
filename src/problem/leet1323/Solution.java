@@ -11,9 +11,4 @@ public class Solution {
         }
         return Integer.parseInt(String.valueOf(sb));
     }
-
-    public static void main(String[] args) {
-        Solution s = new Solution();
-        s.maximum69Number(9969);
-    }
 }
