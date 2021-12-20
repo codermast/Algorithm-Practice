@@ -14,7 +14,7 @@ class Solution {
         ListNode(int val, ListNode next) { this.val = val; this.next = next; }
     }
 
-    public static ListNode deleteDuplicates(ListNode head) {
+    public ListNode deleteDuplicates(ListNode head) {
         Queue<Integer> queue = new LinkedList<>();
 
         Map<Integer,Integer> map = new HashMap<>();
@@ -30,7 +30,7 @@ class Solution {
             }
         }
 
-        ListNode ret = null;
+        ListNode ret;
         if(queue.size() == 0){
             return null;
         }else{
@@ -58,7 +58,7 @@ class Solution {
         r3.next = r4;
         r4.next = r5;
         r5.next = r6;
-
-        deleteDuplicates(root);
+        Solution s= new Solution();
+        ListNode listNode = s.deleteDuplicates(root);
     }
 }
