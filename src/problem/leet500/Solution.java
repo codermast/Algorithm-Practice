@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Solution {
-    public static String[] findWords(String[] words) {
+    public String[] findWords(String[] words) {
         List<String> list = new LinkedList<>();
         for (String word : words) {
             int line = getAkwordLine(word.charAt(0));
@@ -28,7 +28,7 @@ public class Solution {
     /*
     *   获取字母在美式键盘的哪一行
     * */
-    public static int getAkwordLine(char ch){
+    public int getAkwordLine(char ch){
         ch = Character.toLowerCase(ch);
 
         String oneLine = "qwertyuiop";
@@ -42,10 +42,5 @@ public class Solution {
         }else{
             return 3;
         }
-    }
-
-    public static void main(String[] args) {
-        String[] strings = {"Hello", "Alaska", "Dad", "Peace"};
-        System.out.println(findWords(strings).toString());
     }
 }
