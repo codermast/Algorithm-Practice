@@ -13,7 +13,6 @@ public class Solution {
     *   判断是否为回文字符串
     * */
     public boolean isPalindromeString(String str){
-        StringBuilder sb = new StringBuilder(str);
-        return sb.reverse().toString().equals(str);
+        return new StringBuilder(str).reverse().toString().equals(str);
     }
 }
