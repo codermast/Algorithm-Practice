@@ -21,6 +21,6 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        smallerNumbersThanCurrent(new int[]{8,1,2,2,3});
+        System.out.println(Arrays.toString(smallerNumbersThanCurrent(new int[]{8, 1, 2, 2, 3})));
     }
 }
