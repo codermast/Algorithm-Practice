@@ -24,6 +24,6 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        isAnagram("anagram","nagaram");
+        System.out.println(isAnagram("anagram", "nagaram"));
     }
 }
