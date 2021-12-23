@@ -1,35 +1,29 @@
 package problem.leet242;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class Solution {
-    public boolean isAnagram(String s, String t) {
-        Map<Character,Integer> maps = new HashMap<>();
-        Map<Character,Integer> mapt = new HashMap<>();
-
-        for(int i = 0;i<s.length();i++){
-            char c = s.charAt(i);
-            maps.put(c,maps.getOrDefault(c,0)+1);
-        }
-        for(int i = 0;i<t.length();i++){
-            char c = t.charAt(i);
-            mapt.put(c,mapt.getOrDefault(c,0)+1);
-        }
-
-        for(int i = 0;i<s.length();i++){
-            char c = s.charAt(i);
-            if(maps.get(c) != mapt.get(c)){
+    public static boolean isAnagram(String s, String t) {
+        StringBuilder sbs = new StringBuilder(s);
+        StringBuilder sbt = new StringBuilder(t);
+        int i = 0;
+        while( i < sbs.length()){
+            for(int j = 0;j<sbt.length();j++){
+                if(sbs.charAt(i) == sbt.charAt(j)){
+                    sbt.delete(j,j+1);
+                    break;
+                }
+                if(j == sbt.length()){
+                    return false;
+                }
+            }
+            i++;
+            if(sbt.length() == 0 && i != sbs.length()){
                 return false;
             }
         }
+        return i == sbs.length() && sbt.length() == 0;
+    }
 
-        for(int i = 0;i<t.length();i++){
-            char c = t.charAt(i);
-            if(maps.get(c) != mapt.get(c)){
-                return false;
-            }
-        }
-        return true;
+    public static void main(String[] args) {
+        isAnagram("anagram","nagaram");
     }
 }
