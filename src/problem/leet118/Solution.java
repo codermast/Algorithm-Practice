@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Solution {
-    public static List<List<Integer>> generate(int numRows) {
+    public List<List<Integer>> generate(int numRows) {
         // 返回值
         List<List<Integer>> ret = new LinkedList<>();
         if(numRows == 1){
@@ -36,9 +36,5 @@ public class Solution {
             line++;
         }
         return ret;
-    }
-
-    public static void main(String[] args) {
-        generate(5);
     }
 }
