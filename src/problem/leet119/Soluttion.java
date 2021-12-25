@@ -5,8 +5,7 @@ import java.util.List;
 
 public class Soluttion {
     public List<Integer> getRow(int rowIndex) {
-        List<Integer> ret = generate(rowIndex + 1).get(rowIndex);
-        return ret;
+        return generate(rowIndex + 1).get(rowIndex);
     }
     public List<List<Integer>> generate(int numRows) {
         // 返回值
