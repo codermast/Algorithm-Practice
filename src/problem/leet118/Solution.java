@@ -7,13 +7,6 @@ public class Solution {
     public List<List<Integer>> generate(int numRows) {
         // 返回值
         List<List<Integer>> ret = new LinkedList<>();
-        if(numRows == 1){
-            List<Integer> list = new LinkedList<>();
-            list.add(1);
-            ret.add(list);
-            return ret;
-        }
-
         int line = 1;
 
         while(line <= numRows){
