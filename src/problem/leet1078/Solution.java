@@ -24,6 +24,7 @@ public class Solution {
     }
 
     public static void main(String[] args) {
+        // 测试用例
         String[] ocurrences = findOcurrences("alice is a good girl she is a good student", "a", "good");
         System.out.println(Arrays.toString(ocurrences));
     }
