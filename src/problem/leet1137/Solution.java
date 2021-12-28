@@ -36,10 +36,21 @@ public class Solution {
     }
 
     public static void main(String[] args) {
+        /*
+        *   动态规划
+        * */
         System.out.println(tribonacci(1));
         System.out.println(tribonacci(4));
         System.out.println(tribonacci(12));
         System.out.println(tribonacci(13));
         System.out.println(tribonacci(25));
+        /*
+        * 递归法
+        * */
+        System.out.println(tribonacci2(1));
+        System.out.println(tribonacci2(4));
+        System.out.println(tribonacci2(12));
+        System.out.println(tribonacci2(13));
+        System.out.println(tribonacci2(25));
     }
 }
