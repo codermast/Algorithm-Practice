@@ -1,6 +1,7 @@
 package problem.leet1137;
 
 public class Solution {
+
     /*
     *   动态规划
     * */
@@ -19,6 +20,19 @@ public class Solution {
             s = p + q + r;
         }
         return s;
+    }
+
+    /*
+     *   递归法
+     * */
+    public static int tribonacci2(int n) {
+        if(n< 2 ){
+            return n;
+        }
+        if(n == 2){
+            return 1;
+        }
+        return tribonacci2(n-3) + tribonacci2(n-2) + tribonacci2(n-1);
     }
 
     public static void main(String[] args) {
