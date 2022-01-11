@@ -28,7 +28,7 @@ public class Solution {
                 return o1.count - o2.count;
             }
         });
-        
+
         for (Map.Entry<Character, Integer> entry : map.entrySet()) {
             queue.add(new CharNum(entry.getKey(),entry.getValue()));
         }
