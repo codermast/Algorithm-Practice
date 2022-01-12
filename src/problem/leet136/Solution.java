@@ -26,4 +26,16 @@ public class Solution {
 
         return -1;
     }
+
+    /*
+    *   位运算进行实现
+    * */
+    public int singleNumber2(int[] nums) {
+        int ret = 0;
+        for(int i : nums){
+            ret = ret ^ i;
+        }
+        return ret;
+    }
+
 }
