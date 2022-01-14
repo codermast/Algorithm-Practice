@@ -4,36 +4,41 @@ import java.util.*;
 
 
 public class Solution {
-    static class KeyValue{
-        public int key;
-        public int value;
-    }
-
     public int[] topKFrequent(int[] nums, int k) {
-        Map<Integer,Integer> map = new HashMap<>();
-        for (int i : nums){
-            map.put(i,map.getOrDefault(i,0) + 1);
+        int[] ret = new int[k];
+        if(k == 0){
+            return ret;
         }
-
-        PriorityQueue<KeyValue> queue = new PriorityQueue<>(k,new Comparator<KeyValue>() {
+        Map<Integer,Integer> map = new HashMap<>();
+        PriorityQueue<int[]> queue = new PriorityQueue(k, new Comparator<int[]>() {
             @Override
-            public int compare(KeyValue o1, KeyValue o2) {
-                return o1.value - o2.value;
+            public int compare(int[] o1, int[] o2) {
+                return o1[1] - o2[1];
             }
         });
 
-        for (int i : nums){
-            KeyValue keyValue = new KeyValue();
-            keyValue.key = i;
-            keyValue.value = map.get(i);
-
-            queue.offer(keyValue);
+        for(int i : nums){
+            map.put(i,map.getOrDefault(i,0) + 1);
         }
-        int[] ret = new int[k];
-        for(int i = 0;!queue.isEmpty();i++){
-            ret[i] = queue.poll().key;
+
+        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+            int[] arr = new int[2];
+            arr[0] = entry.getKey();
+            arr[1] = entry.getValue();
+            if(queue.size() < k){
+                queue.add(arr);
+            }else{
+                if(queue.peek()[1] < entry.getValue()){
+                    queue.poll();
+                    queue.add(arr);
+                }
+            }
+        }
+
+        for(int i = 0;i<k;i++){
+            int[] poll = queue.poll();
+            ret[i] = poll[0];
         }
         return ret;
     }
-
 }
