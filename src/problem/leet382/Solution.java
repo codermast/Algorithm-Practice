@@ -23,8 +23,9 @@ class ListNode {
 }
 
 public class Solution {
-
+    // 以数组方式存储
     ListNode[] arr;
+    // 数组中元素的个数
     int size;
 
     public Solution(ListNode head) {
@@ -37,7 +38,9 @@ public class Solution {
         this.arr =  list.toArray(new ListNode[0]);
         this.size = list.size();
     }
-
+    /*
+    *   返回链表中的随机结点的Value值
+    * */
     public int getRandom() {
         Random random = new Random();
 
@@ -46,6 +49,9 @@ public class Solution {
         return arr[i].val;
     }
 
+    /*
+    *   测试
+    * */
     public static void main(String[] args) {
         ListNode a = new ListNode(1);
         ListNode b = new ListNode(2);
