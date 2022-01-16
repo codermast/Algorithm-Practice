@@ -34,7 +34,7 @@ public class Solution {
             list.add(i);
         }
 
-        this.arr =  list.toArray(new ListNode[list.size()]);
+        this.arr =  list.toArray(new ListNode[0]);
         this.size = list.size();
     }
 
