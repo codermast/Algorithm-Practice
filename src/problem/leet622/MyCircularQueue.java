@@ -28,8 +28,6 @@ class MyCircularQueue {
         return true;
     }
 
-
-
     // deQueue(): 从循环队列中删除一个元素。如果成功删除则返回真。
     public boolean deQueue() {
         if(isEmpty()){
