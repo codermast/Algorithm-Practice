@@ -22,17 +22,14 @@ public class Solution {
 
         // 将数组进行排序，传入自定义比较器
         // 将其按照字符串所代表的时间升序排列
-        Arrays.sort(strArr, new Comparator<String>() {
-            @Override
-            public int compare(String o1, String o2) {
-                String[] arr1 = o1.split(":");
-                String[] arr2 = o2.split(":");
+        Arrays.sort(strArr, (o1, o2) -> {
+            String[] arr1 = o1.split(":");
+            String[] arr2 = o2.split(":");
 
-                if (Integer.parseInt(arr1[0]) == (Integer.parseInt(arr2[0]))) {
-                    return Integer.parseInt(arr1[1]) - (Integer.parseInt(arr2[1]));
-                } else {
-                    return Integer.parseInt(arr1[0]) - (Integer.parseInt(arr2[0]));
-                }
+            if (Integer.parseInt(arr1[0]) == (Integer.parseInt(arr2[0]))) {
+                return Integer.parseInt(arr1[1]) - (Integer.parseInt(arr2[1]));
+            } else {
+                return Integer.parseInt(arr1[0]) - (Integer.parseInt(arr2[0]));
             }
         });
 
@@ -45,7 +42,6 @@ public class Solution {
         }
         // 最后一个数和第一个数的差，并求最小值
         return Math.min(Math.abs(1440 - differ(strArr[strArr.length - 1], strArr[0])), minTimeDif);
-
     }
 
     /*
