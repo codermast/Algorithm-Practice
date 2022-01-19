@@ -18,12 +18,7 @@ public class Solution {
     public String[] findRelativeRanks(int[] score) {
         String[] ret = new String[score.length];
 
-        PriorityQueue<Node> queue = new PriorityQueue<>(score.length, new Comparator<Node>() {
-            @Override
-            public int compare(Node o1, Node o2) {
-                return o2.num - o1.num;
-            }
-        });
+        PriorityQueue<Node> queue = new PriorityQueue<>(score.length, ((o1, o2) -> o2.num - o1.num));
 
         for (int i = 0;i<score.length;i++) {
             queue.add(new Node(score[i],i));
