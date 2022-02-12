@@ -5,7 +5,9 @@ public class Solution {
         // 判断是否为升序，默认为升序
         boolean isUp = true;
 
+        // 记录是否为第一次确定单调性
         boolean isFirst = true;
+
         for(int i = 0;i + 1<nums.length;i++){
             if (isFirst) {
                 if (nums[i + 1] < nums[i]) {
