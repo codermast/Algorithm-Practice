@@ -4,29 +4,47 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Solution {
-    public List<Integer> luckyNumbers (int[][] matrix) {
+    public static List<Integer> luckyNumbers (int[][] matrix) {
         List<Integer> list = new LinkedList<>();
 
-        // i 控制第几行
-        for(int i = 0;i<matrix.length;i++){
-            // 一行的最小值
+        // i 控制的是第几行
+        for (int[] ints : matrix) {
+            // 记录该行的最小值
             int minNum = Integer.MAX_VALUE;
+            // 记录该行最小值的下标
             int minIndex = 0;
-            // j 控制第几列
-            for (int j = 0;j<matrix[0].length;j++){
-                if(minNum > matrix[i][j]){
-                    minNum = matrix[i][j];
+            // 判断是否是 luckyNumber
+            boolean isLuckyNum = true;
+            // 遍历数组找出最小值和最小值下标
+            for (int j = 0; j < matrix[0].length; j++) {
+                if (minNum > ints[j]) {
+                    minNum = ints[j];
                     minIndex = j;
                 }
             }
-
-            for (int k = 0;k<matrix.length;k++){
-                if (minNum < matrix[k][minIndex]){
+            // 该行最小值的下标的那一列进行遍历，判断是否满足 luckyNumber
+            for (int[] value : matrix) {
+                if (minNum < value[minIndex]) {
+                    isLuckyNum = false;
                     break;
                 }
             }
+            if (isLuckyNum) {
+                list.add(minNum);
+            }
+        }
+        return list;
+    }
 
-            list.add();
+    public static void main(String[] args) {
+        int[][] arr = {
+                {3,7,8},
+                {9,11,13},
+                {15,16,17}
+        };
+        List<Integer> list = luckyNumbers(arr);
+        for (Integer integer : list) {
+            System.out.println(integer);
         }
     }
 }
