@@ -1,4 +1,4 @@
-package leet34;
+package leet034;
 
 public class Solution {
     public int[] searchRange(int[] nums, int target) {
