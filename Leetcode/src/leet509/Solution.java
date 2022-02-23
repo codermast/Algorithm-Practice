@@ -36,7 +36,6 @@ public class Solution {
         return dp[n];
     }
 
-
     // 动态规划法2：仅维护两个需要递推的数值，不需要记录整个dp数组（优化）
     public int fib3(int n) {
         if (n < 2) {
