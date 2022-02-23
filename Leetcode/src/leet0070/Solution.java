@@ -1,4 +1,4 @@
-package leet070;
+package leet0070;
 
 public class Solution {
     // 递归法
