@@ -8,6 +8,5 @@ public class Solution {
             maxAns = Math.max(maxAns, pre);
         }
         return maxAns;
-
     }
 }
