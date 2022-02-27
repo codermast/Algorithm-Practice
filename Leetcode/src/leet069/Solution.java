@@ -1,6 +1,7 @@
 package leet069;
 
 public class Solution {
+    // 二分查找法
     public static int mySqrt(int x) {
         int left = 0;
         int right = x;
