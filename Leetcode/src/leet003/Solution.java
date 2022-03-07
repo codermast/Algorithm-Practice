@@ -6,7 +6,6 @@ import java.util.Set;
 public class Solution {
     public int lengthOfLongestSubstring(String s) {
         StringBuilder ret = new StringBuilder();
-
         for (int i = 0; i < s.length(); i++) {
             Set<Character> set = new HashSet<>();
             StringBuilder sb = new StringBuilder();
