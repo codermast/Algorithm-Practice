@@ -1,34 +1,35 @@
 package leet003;
 
-import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Solution {
-    public static int lengthOfLongestSubstring(String s) {
-        char[] arr = s.toCharArray();
-        StringBuilder sb = new StringBuilder();
-        int maxlen = 0;
-        // 分别求最长的字串，每次递减一个
-        for(int i = 0;i<arr.length;i++) {
-            char[] chars = Arrays.copyOfRange(arr,i,arr.length);
-            sb.delete(0, sb.length());
+    public int lengthOfLongestSubstring(String s) {
+        StringBuilder ret = new StringBuilder();
 
-    
-            for (char c : chars) {
-                String tmp = "" + c;
-                if (sb.indexOf(tmp) >= 0) {
-                    maxlen = Math.max(maxlen, sb.length());
-                    sb.delete(0, sb.length());
-                } else {
+        for (int i = 0; i < s.length(); i++) {
+            Set<Character> set = new HashSet<>();
+            StringBuilder sb = new StringBuilder();
+            for (int j = i; j < s.length(); j++) {
+                char c = s.charAt(j);
+                boolean add = set.add(c);
+                if (add) {
                     sb.append(c);
+                } else {
+                    break;
                 }
             }
-            maxlen = Math.max(maxlen,sb.length());
+            if (ret.length() < sb.length()) {
+                ret = sb;
+            }
         }
-        return maxlen;
+        return ret.length();
     }
 
     public static void main(String[] args) {
-        String str = "jbpnbwwd";
-        System.out.println(lengthOfLongestSubstring(str));
+        Solution s = new Solution();
+        System.out.println(s.lengthOfLongestSubstring("abcabcbb"));
+        System.out.println(s.lengthOfLongestSubstring("bbbbb"));
+        System.out.println(s.lengthOfLongestSubstring("pwwkew"));
     }
 }
