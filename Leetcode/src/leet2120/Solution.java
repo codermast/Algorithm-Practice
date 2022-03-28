@@ -20,18 +20,10 @@ public class Solution {
         for (int k = 0; k < s.length(); k++) {
             char c = s.charAt(k);
             switch (c) {
-                case 'L':
-                    j--;
-                    break;
-                case 'R':
-                    j++;
-                    break;
-                case 'U':
-                    i--;
-                    break;
-                case 'D':
-                    i++;
-                    break;
+                case 'L' -> j--;
+                case 'R' -> j++;
+                case 'U' -> i--;
+                case 'D' -> i++;
             }
             if (i < 0 || i >= n || j < 0 || j >= n) {
                 break;
