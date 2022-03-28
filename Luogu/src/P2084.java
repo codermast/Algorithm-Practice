@@ -1,8 +1,6 @@
-package P2084;
-
 import java.util.Scanner;
 
-public class Solution {
+public class P2084 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
