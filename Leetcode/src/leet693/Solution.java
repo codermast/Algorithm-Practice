@@ -2,8 +2,7 @@ package leet693;
 
 public class Solution {
     public boolean hasAlternatingBits(int n) {
-        boolean isTrue;
-        isTrue = (n & 1) == 1;
+        boolean isTrue = (n & 1) == 1;
         while (n != 0) {
             if (isTrue && (n & 1) == 1) {
                 isTrue = false;
