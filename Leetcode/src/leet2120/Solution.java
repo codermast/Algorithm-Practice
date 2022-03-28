@@ -9,7 +9,7 @@ public class Solution {
 
         int[] ret = new int[s.length()];
         for (int k = 0; k < s.length(); k++) {
-            ret[k] = moveAct(s.substring(k), i, j,  n);
+            ret[k] = moveAct(s.substring(k), i, j, n);
         }
         return ret;
     }
@@ -20,10 +20,18 @@ public class Solution {
         for (int k = 0; k < s.length(); k++) {
             char c = s.charAt(k);
             switch (c) {
-                case 'L' -> j--;
-                case 'R' -> j++;
-                case 'U' -> i--;
-                case 'D' -> i++;
+                case 'L':
+                    j--;
+                    break;
+                case 'R':
+                    j++;
+                    break;
+                case 'U':
+                    i--;
+                    break;
+                case 'D':
+                    i++;
+                    break;
             }
             if (i < 0 || i >= n || j < 0 || j >= n) {
                 break;
