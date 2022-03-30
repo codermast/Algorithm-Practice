@@ -5,6 +5,7 @@ import java.util.Arrays;
 public class Solution {
     /*
     *   贪心算法： 把最小的饼干，依次拿给胃口最小的孩子吃，看是否能满足。
+    *            也可以把最大的饼干，依次拿给胃口大的孩子吃，看是否能满足。
     * */
     public int findContentChildren(int[] g, int[] s) {
         Arrays.sort(g);
