@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-class Solution {
+public class Solution {
     static class Node {
         public int val;
         public Node left;
