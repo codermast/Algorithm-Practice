@@ -26,13 +26,12 @@ class Solution2 {
         stack.push(root);
 
         while(!stack.isEmpty()){
-            int size = stack.size();
-            for (int i = 0; i < size; i++) {
                 TreeNode pop = stack.pop();
                 TreeNode tmp = pop.left;
                 pop.left = pop.right;
                 pop.right = tmp;
 
+                // 先压入左子树，那么说明先反转右子树，因为这里是栈的结构，先进后出
                 if (pop.left != null){
                     stack.push(pop.left);
                 }
@@ -40,7 +39,6 @@ class Solution2 {
                 if (pop.right != null){
                     stack.push(pop.right);
                 }
-            }
         }
         return root;
     }
