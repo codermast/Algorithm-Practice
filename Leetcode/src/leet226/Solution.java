@@ -20,6 +20,7 @@ public class Solution {
         }
     }
 
+    // 递归法
     public TreeNode invertTree(TreeNode root) {
         if(root == null){
             return null;
