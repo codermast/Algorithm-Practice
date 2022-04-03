@@ -26,6 +26,7 @@ public class Solution {
     *    求树的最大深度，即左子树和右子树深度的最大值 + 1（ 1 为根节点）
     *       如果树为空，则直接返回 0 即可。
     */
+    // 递归法
     public int maxDepth(TreeNode root) {
         if(root == null){
             return 0;
