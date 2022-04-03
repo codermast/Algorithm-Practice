@@ -16,7 +16,7 @@ class Solution2 {
         }
     }
 
-    // 迭代遍历法
+    // 迭代遍历法（深度优先遍历）
     public TreeNode invertTree(TreeNode root) {
         if (root == null){
             return null;
