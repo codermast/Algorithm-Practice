@@ -20,25 +20,24 @@ public class Solution {
         }
     }
 
+    // 递归法
     public int minDepth(TreeNode root) {
-        if(root == null){
+        if (root == null) {
             return 0;
         }
 
-        if(root.left == null && root.right == null){
+        if (root.left == null && root.right == null) {
             return 1;
         }
 
-        // 不太清楚
-        int minlen = Integer.MAX_VALUE;
-        if(root.left != null){
-            minlen = Math.min(minDepth(root.left), minlen);
+        int minLen = Integer.MAX_VALUE;
+        if (root.left != null) {
+            minLen = Math.min(minLen, minDepth(root.left));
         }
 
         if (root.right != null) {
-            minlen = Math.min(minDepth(root.right), minlen);
+            minLen = Math.min(minLen, minDepth(root.right));
         }
-
-        return minlen + 1;
+        return minLen + 1;
     }
 }
