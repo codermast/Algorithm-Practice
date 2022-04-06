@@ -31,6 +31,7 @@ class Solution {
 
             for (int i = 0; i < size; i++) {
                 TreeNode poll = queue.poll();
+                assert poll != null;
                 if (poll.left != null){
                     queue.offer(poll.left);
                 }
