@@ -21,14 +21,11 @@ class Solution {
         if (root == null){
             return true;
         }
-
         int num = root.val;
         Queue<TreeNode> queue = new LinkedList<>();
         queue.offer(root);
-
         while (!queue.isEmpty()){
             int size = queue.size();
-
             for (int i = 0; i < size; i++) {
                 TreeNode poll = queue.poll();
                 assert poll != null;
