@@ -1,4 +1,4 @@
-package face0101.leet038;
+package leet038;
 
 public class Solution {
     public static String countAndSay(int n) {
