@@ -3,14 +3,14 @@ package offer09;
 import java.util.Stack;
 
 public class CQueue {
-
     // 进栈
-    Stack<Integer> stack1 = new Stack<>();
+    Stack<Integer> stack1 ;
     // 出栈
-    Stack<Integer> stack2 = new Stack<>();
+    Stack<Integer> stack2;
 
     public CQueue() {
-
+        this.stack1 = new Stack<>();
+        this.stack2 = new Stack<>();
     }
 
     public void appendTail(int value) {
