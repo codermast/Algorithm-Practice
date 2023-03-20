@@ -45,10 +45,28 @@ public class Solution {
         return Math.min(dp[0], dp[1]);
     }
 
+    // 动态规划法3：将dp数组进行简化
+    public int minCostClimbingStairs3(int[] cost) {
+        int[] dp = new int[2];
+
+        // 数组会默认初始化为0
+        //dp[0] = 0;
+        //dp[1] = 0;
+
+        for(int i = 2; i <= cost.length;i++){
+            int tmp = Math.min(dp[1] + cost[i - 1],dp[0] + cost[i -2]);
+            dp[0] = dp[1];
+            dp[1] = tmp;
+        }
+        return dp[1];
+    }
+
     // 测试用例
     public static void main(String[] args) {
         Solution s = new Solution();
         int[] arr = {1, 100, 1, 1, 1, 100, 1, 1, 100, 1};
-        System.out.println(s.minCostClimbingStairs2(arr));
+        int[] arr2= {10,15,20};
+        System.out.println(s.minCostClimbingStairs3(arr));
+        System.out.println(s.minCostClimbingStairs3(arr2));
     }
 }
