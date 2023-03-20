@@ -1,4 +1,4 @@
-package leet0509;
+package leet509;
 
 /*
  *   斐波那契数列
