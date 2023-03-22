@@ -1,8 +1,11 @@
 import java.util.Arrays;
-
+/*
+*   冒泡排序：基于交换的排序算法，稳定的排序算法
+*       时间复杂度：O(n^2)
+*       空间复杂度：O(1)
+* */
 public class BubbleSort{
     // 1.冒泡排序原始版本
-    // 时间复杂度：O(n^2)  空间复杂度:O(1)
     public int[] bubbleSortOne(int[] arr){
         for (int i = 0; i < arr.length; i++) {
             for (int j = 1; j < arr.length - i; j++) {
