@@ -1,39 +1,47 @@
 package leet228;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Solution {
-    public static List<String> summaryRanges(int[] nums) {
-        List<String> list = new LinkedList<>();
+    public List<String> summaryRanges(int[] nums) {
+        List<String> ret = new ArrayList<>();
 
-        int n = nums.length;
-        int i = 0;
-        int low = nums[0];
-        int high = nums[0];
-        while(i < n){
-            if(nums[i] == high){
-                high = nums[i];
-            }else{
-                StringBuilder sb = new StringBuilder(String.valueOf(low));
-                if(low < high){
-                    sb.append("->");
-                    sb.append(String.valueOf(high));
-                }
-                list.add(sb.toString());
-                low = nums[i];
-                high = nums[i];
-            }
-            i++;
+        if (nums.length == 0) {
+            return ret;
         }
-        return list;
+        int i = 0;
+        int j = 1;
+        while (j < nums.length) {
+            if (nums[j] - 1 != nums[j - 1]) {
+                if (j - 1 == i) {
+                    ret.add(String.valueOf(nums[i]));
+                } else {
+                    ret.add(nums[i] + "->" + nums[j - 1]);
+                }
+                i = j;
+            }
+            j++;
+        }
+
+        if (j - 1 == i) {
+            ret.add(String.valueOf(nums[j - 1]));
+        } else {
+            ret.add(nums[i] + "->" + nums[j - 1]);
+        }
+
+        return ret;
     }
 
     public static void main(String[] args) {
-        int[] arr = {0,1,2,4,5,7};
-        List<String> strings = summaryRanges(arr);
-        for(String s : strings){
-            System.out.println(s);
+
+        Solution s = new Solution();
+        int[] arr = {0, 2, 3, 4, 6, 8, 9};
+
+        List<String> strings = s.summaryRanges(arr);
+
+        for (String str : strings) {
+            System.out.println(str);
         }
     }
 }
