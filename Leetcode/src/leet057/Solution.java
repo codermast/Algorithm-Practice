@@ -53,12 +53,12 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        Solution s= new Solution();
-        int[][] arr = {{1,3},{6,9}};
-        int[] newInterval = {2,5};
-        int[][] insert = s.insert(arr, newInterval);
+        Solution s = new Solution();
+        int[][] arr = {{1, 5}};
 
-        for (int[] ints : insert) {
+        int[] newInterval = {6, 8};
+        int[][] insert1 = s.insert(arr, newInterval);
+        for (int[] ints : insert1) {
             System.out.println(Arrays.toString(ints));
         }
     }
