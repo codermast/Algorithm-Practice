@@ -15,9 +15,7 @@ public class Solution {
      }
  }
 
-        /*
-            求二叉树的高度
-        */
+    // 递归求二叉树的高度
         public int maxDepth(TreeNode root) {
             if(root == null){
                 return 0;
@@ -25,18 +23,16 @@ public class Solution {
             return Math.max(maxDepth(root.right),maxDepth(root.left)) + 1;
         }
 
-        /*
-            求一个二叉树是否为平衡二叉树
-         */
+    // 求一个二叉树是否为平衡二叉树
         public boolean isBalanced(TreeNode root) {
             if(root == null){
                 return true;
             }
 
-            int lenleft = maxDepth(root.left);
-            int lenright = maxDepth(root.right);
+            int leftLen = maxDepth(root.left);
+            int rightLen = maxDepth(root.right);
 
-            if(Math.abs(lenleft - lenright) > 1){
+            if (Math.abs(leftLen - rightLen) > 1) {
                 return false;
             }
 
