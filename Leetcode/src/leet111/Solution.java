@@ -23,7 +23,7 @@ public class Solution {
         }
     }
 
-    // 递归法
+    // 递归法，递归判断左右子树的最小深度，返回最小的即可
     public int minDepth(TreeNode root) {
         if (root == null) {
             return 0;
@@ -44,7 +44,7 @@ public class Solution {
         return minLen + 1;
     }
 
-    // 遍历迭代法，广度优先
+    // 遍历迭代法，广度优先，即层序遍历
     public int minDepth2(TreeNode root) {
         if (root == null) {
             return 0;
