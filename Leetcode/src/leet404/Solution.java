@@ -3,7 +3,7 @@ package leet404;
 import java.util.Stack;
 
 public class Solution {
-    class TreeNode {
+    static class TreeNode {
         int val;
         TreeNode left;
         TreeNode right;
