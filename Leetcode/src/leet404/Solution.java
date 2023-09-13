@@ -1,5 +1,7 @@
 package leet404;
 
+import java.util.Stack;
+
 public class Solution {
     class TreeNode {
         int val;
@@ -20,9 +22,12 @@ public class Solution {
         }
     }
 
-
-    int sum = 0;
+    // 递归实现
     public int sumOfLeftLeaves(TreeNode root) {
+        return sumOfLeftLeaves1(root, 0);
+    }
+
+    public int sumOfLeftLeaves1(TreeNode root, int sum) {
         if(root == null){
             return sum;
         }
@@ -48,4 +53,33 @@ public class Solution {
         return node.left ==null && node.right == null;
     }
 
+    // 深度优先搜索
+    public int sumOfLeftLeavesDFS(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+
+        int sum = 0;
+
+        Stack<TreeNode> stack = new Stack<>();
+
+        stack.push(root);
+
+        while (!stack.isEmpty()) {
+            TreeNode pop = stack.pop();
+
+            if (isLeafNode(pop.left)) {
+                sum += pop.left.val;
+            }
+
+            if (pop.right != null) {
+                stack.push(pop.right);
+            }
+
+            if (pop.left != null) {
+                stack.push(pop.left);
+            }
+        }
+        return sum;
+    }
 }
