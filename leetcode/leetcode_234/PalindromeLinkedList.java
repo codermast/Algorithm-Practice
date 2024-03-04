@@ -18,18 +18,6 @@ class ListNode {
 }
 
 public class PalindromeLinkedList {
-    public static void main(String[] args) {
-        PalindromeLinkedList s = new PalindromeLinkedList();
-
-        ListNode root = new ListNode(1);
-        ListNode two = root.next = new ListNode(1);
-        ListNode three = two.next = new ListNode(0);
-        ListNode four = three.next = new ListNode(1);
-        ListNode five = four.next = new ListNode(1);
-
-        boolean palindrome = s.isPalindrome(root);
-        System.out.println(palindrome);
-    }
 
     public boolean isPalindrome(ListNode head) {
         if (head == null) {
