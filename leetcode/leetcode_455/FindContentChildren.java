@@ -10,14 +10,14 @@ public class FindContentChildren {
 
         int num = 0;
 
-        int index = g.length - 1;
-        for (int i = s.length - 1; i >= 0; i--) {
-            for (int j = index ; j >= 0; j--) {
-                if (s[i] >= g[j]){
-                    num++;
-                    index = j - 1;
-                    break;
-                }
+        // 控制饼干的下标
+        int index = s.length - 1;
+
+        // 控制孩子
+        for (int i = g.length - 1; i >= 0; i--) {
+            if (index >= 0 && s[index] >= g[i]){
+                num++;
+                index--;
             }
         }
 
