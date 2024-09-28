@@ -2,34 +2,23 @@ package leetcode_560;
 
 public class SubArraySumEqualsK {
 
-    // 1. 暴力匹配 [超时]
+    // 枚举暴力匹配
     public int subarraySum(int[] nums, int k) {
-        int arrLen = nums.length;
-        int sum = 0;
-        while (arrLen > 0) {
-            for (int i = 0; i < nums.length - arrLen + 1; i++) {
-                if (arrSum(nums, i, i + arrLen - 1) == k) {
-                    sum++;
+        int count = 0;
+
+        for (int end = 0; end < nums.length; end++) {
+            int sum = 0;
+            for (int start = end; start >=0; start--) {
+                sum += nums[start];
+
+                if (sum == k){
+                    count++;
                 }
             }
-            arrLen--;
         }
-        return sum;
+
+        return count;
     }
 
-    // 数组求和
-    public int arrSum(int[] arr, int i, int j) {
-        int sum = 0;
-        while (i <= j) {
-            sum += arr[i];
-            i++;
-        }
-        return sum;
-    }
-
-    // 2. 优化
-    public int subarraySum1(int[] nums, int k) {
-        return 0;
-    }
-
+    // TODO: 前缀和+哈希表优化 时间 O(n) 空间 O(n)
 }
